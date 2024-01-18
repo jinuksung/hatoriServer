@@ -7,7 +7,6 @@ WORKDIR /app
 # 크롬을 설치하기 위한 패키지 업데이트 및 설치
 RUN apt-get update && apt-get install -y \ 
     chromium \ 
-    ttf-freefont \
     udev \
     xvfb \
     x11vnc \
