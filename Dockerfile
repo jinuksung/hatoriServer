@@ -7,10 +7,6 @@ WORKDIR /app
 # 크롬을 설치하기 위한 패키지 업데이트 및 설치
 RUN apt-get update && apt-get install -y \ 
     chromium \ 
-    nss \
-    freetype \
-    harfbuzz \
-    ca-certificates \
     ttf-freefont \
     udev \
     xvfb \
