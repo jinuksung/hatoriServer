@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 크롬을 설치하기 위한 패키지 업데이트 및 설치
 RUN apt-get update \
-    && apt-get install -y chromium-browser \
+    && RUN apk add --no-cache udev ttf-freefont chromium \
     && rm -rf /var/lib/apt/lists/*
 
 # 앱 소스 코드를 현재 작업 디렉토리에 복사
