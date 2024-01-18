@@ -5,9 +5,19 @@ FROM node:latest
 WORKDIR /app
 
 # 크롬을 설치하기 위한 패키지 업데이트 및 설치
-RUN apt-get update 
-RUN apt-get add --no-cache chromium nss freetype harfbuzz ca-certificates ttf-freefont udev xvfb x11vnc fluxbox dbus
-RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \ 
+    chromium \ 
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    udev \
+    xvfb \
+    x11vnc \
+    fluxbox \
+    dbus \
+&& rm -rf /var/lib/apt/lists/*
 
 # 앱 소스 코드를 현재 작업 디렉토리에 복사
 COPY . .
