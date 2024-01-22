@@ -1,6 +1,8 @@
 # 기반 이미지 설정
 FROM node:latest
 
+# 한국 시간대 설정
+ENV TZ Asia/Seoul
 # 작업 디렉토리 설정
 WORKDIR /app
 
