@@ -6,7 +6,10 @@ import { logger } from "../modules/logger";
 const siteName = "ruliwebThumbnail";
 
 const ruliwebThumbnailRequest = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: "/usr/bin/chromium",
+    args: ["--no-sandbox", "--disable-dev-shm-usage"],
+  });
 
   const page = await browser.newPage();
 
