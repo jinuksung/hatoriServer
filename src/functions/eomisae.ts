@@ -13,6 +13,7 @@ const eomisaeRequest = async () => {
   const browser = await puppeteer.launch({
     executablePath: "/usr/bin/chromium",
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
+    timeout: 0,
   });
 
   const page = await browser.newPage();
