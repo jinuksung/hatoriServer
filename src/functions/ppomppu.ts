@@ -15,6 +15,7 @@ const siteName = "ppomppu";
 const ppomppuRequest = async () => {
   const dealData: HotDealDataType[] = [];
   const browser = await puppeteer.launch({
+    headless: "new",
     executablePath: "/usr/bin/chromium",
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
   });

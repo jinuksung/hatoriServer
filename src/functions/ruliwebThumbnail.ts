@@ -7,6 +7,7 @@ const siteName = "ruliwebThumbnail";
 
 const ruliwebThumbnailRequest = async () => {
   const browser = await puppeteer.launch({
+    headless: "new",
     executablePath: "/usr/bin/chromium",
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
   });
