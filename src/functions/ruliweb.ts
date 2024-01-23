@@ -11,6 +11,7 @@ import { logger } from "../modules/logger";
 const siteName = "ruliweb";
 
 const ruliwebRequest = async () => {
+  logger.info("ruliwebRequest Start");
   const dealData: HotDealDataType[] = [];
   const browser = await puppeteer.launch({
     headless: "new",
@@ -21,10 +22,14 @@ const ruliwebRequest = async () => {
   const page = await browser.newPage();
 
   for (let i = 1; i <= 5; i++) {
-    await page.goto(
-      `https://bbs.ruliweb.com/market/board/1020?page=${i}&view=default`,
-      { waitUntil: "networkidle2", timeout: 0 }
-    );
+    await page
+      .goto(
+        `https://bbs.ruliweb.com/market/board/1020?page=${i}&view=default`,
+        { waitUntil: "networkidle2", timeout: 0 }
+      )
+      .catch((err) => {
+        logger.error("page.goto error", err);
+      });
 
     const content = await page.content();
     const $ = cheerio.load(content, { ignoreWhitespace: false });
