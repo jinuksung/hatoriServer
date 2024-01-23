@@ -11,9 +11,9 @@ const scheduler = new ToadScheduler();
 
 const eomisaeTask = new AsyncTask("eomisaeTask", async () => {
   //   await eomisaeRequest();
-  await ruliwebRequest();
-  await ruliwebThumbnailRequest();
-  //   await ppomppuRequest();
+  await ppomppuRequest();
+  //   await ruliwebRequest();
+  //   await ruliwebThumbnailRequest();
 });
 
 const ruliwebTask = new AsyncTask("ruliwebTask", async () => {
