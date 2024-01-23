@@ -57,11 +57,11 @@ const ruliwebThumbnailJob = new SimpleIntervalJob(
   rulliwebThumbnailTask
 );
 
+app.listen(process.env.PORT!, () => {
+  console.log(`server on port ${process.env.PORT!}`);
+});
+
 scheduler.addSimpleIntervalJob(eomisaeJob);
 scheduler.addSimpleIntervalJob(ruliwebJob);
 scheduler.addSimpleIntervalJob(ppomppuJob);
 scheduler.addSimpleIntervalJob(ruliwebThumbnailJob);
-
-app.listen(process.env.PORT!, () => {
-  console.log(`server on port ${process.env.PORT!}`);
-});
