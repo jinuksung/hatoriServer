@@ -22,6 +22,7 @@ const ruliwebRequest = async () => {
   const page = await browser.newPage();
 
   for (let i = 1; i <= 5; i++) {
+    logger.info(`loop${i} start`);
     await page
       .goto(
         `https://bbs.ruliweb.com/market/board/1020?page=${i}&view=default`,
@@ -69,6 +70,7 @@ const ruliwebRequest = async () => {
             url,
             updated_at: new Date(),
           };
+          logger.info(dealItemData);
           dealData.push(dealItemData);
         } else {
           return;
