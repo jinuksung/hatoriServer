@@ -9,13 +9,13 @@ const ruliwebThumbnailRequest = async () => {
   const browser = await puppeteer.launch({
     executablePath: "/usr/bin/chromium",
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
-    timeout: 0,
   });
 
   const page = await browser.newPage();
 
   await page.goto(
-    `https://bbs.ruliweb.com/market/board/1020?page=1&view=gallery`
+    `https://bbs.ruliweb.com/market/board/1020?page=1&view=gallery`,
+    { waitUntil: "networkidle2", timeout: 0 }
   );
 
   const content = await page.content();

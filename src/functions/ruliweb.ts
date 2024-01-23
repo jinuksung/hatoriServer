@@ -21,7 +21,8 @@ const ruliwebRequest = async () => {
 
   for (let i = 1; i <= 5; i++) {
     await page.goto(
-      `https://bbs.ruliweb.com/market/board/1020?page=${i}&view=default`
+      `https://bbs.ruliweb.com/market/board/1020?page=${i}&view=default`,
+      { waitUntil: "networkidle2", timeout: 0 }
     );
 
     const content = await page.content();

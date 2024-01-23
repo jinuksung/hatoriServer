@@ -13,13 +13,15 @@ const eomisaeRequest = async () => {
   const browser = await puppeteer.launch({
     executablePath: "/usr/bin/chromium",
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
-    timeout: 0,
   });
 
   const page = await browser.newPage();
 
   for (let i = 1; i <= 5; i++) {
-    await page.goto(`https://eomisae.co.kr/index.php?mid=os&page=${i}`);
+    await page.goto(`https://eomisae.co.kr/index.php?mid=os&page=${i}`, {
+      waitUntil: "networkidle2",
+      timeout: 0,
+    });
     const content = await page.content();
     const $ = cheerio.load(content);
 

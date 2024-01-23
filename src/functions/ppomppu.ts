@@ -17,7 +17,6 @@ const ppomppuRequest = async () => {
   const browser = await puppeteer.launch({
     executablePath: "/usr/bin/chromium",
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
-    timeout: 0,
   });
 
   const page = await browser.newPage();
@@ -25,7 +24,8 @@ const ppomppuRequest = async () => {
   for (let i = 1; i <= 5; i++) {
     await page
       .goto(
-        `https://www.ppomppu.co.kr/zboard/zboard.php?id=ppomppu&page=${i}&divpage=85`
+        `https://www.ppomppu.co.kr/zboard/zboard.php?id=ppomppu&page=${i}&divpage=85`,
+        { waitUntil: "networkidle2", timeout: 0 }
       )
       .catch((err) => {
         logger.error(err);
