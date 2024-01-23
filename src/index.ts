@@ -10,7 +10,10 @@ const app = express();
 const scheduler = new ToadScheduler();
 
 const eomisaeTask = new AsyncTask("eomisaeTask", async () => {
-  return eomisaeRequest();
+  await eomisaeRequest();
+  await ruliwebRequest();
+  await ruliwebThumbnailRequest();
+  await ppomppuRequest();
 });
 
 const ruliwebTask = new AsyncTask("ruliwebTask", async () => {
