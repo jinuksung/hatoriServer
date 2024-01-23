@@ -34,7 +34,7 @@ const ruliwebRequest = async () => {
 
     const content = await page.content();
     const $ = cheerio.load(content, { ignoreWhitespace: false });
-    // console.log(content);
+    logger.info(content);
     $(
       "#board_list > div > div.board_main.theme_default.theme_white > table > tbody"
     )
