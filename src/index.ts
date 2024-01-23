@@ -32,7 +32,7 @@ const rulliwebThumbnailTask = new AsyncTask(
 );
 
 const eomisaeJob = new SimpleIntervalJob(
-  { minutes: 5, runImmediately: true },
+  { minutes: 20, runImmediately: true },
   eomisaeTask
 );
 
