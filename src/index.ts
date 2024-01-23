@@ -62,6 +62,6 @@ app.listen(process.env.PORT!, () => {
 });
 
 scheduler.addSimpleIntervalJob(eomisaeJob);
-scheduler.addSimpleIntervalJob(ruliwebJob);
-scheduler.addSimpleIntervalJob(ppomppuJob);
-scheduler.addSimpleIntervalJob(ruliwebThumbnailJob);
+// scheduler.addSimpleIntervalJob(ruliwebJob);
+// scheduler.addSimpleIntervalJob(ppomppuJob);
+// scheduler.addSimpleIntervalJob(ruliwebThumbnailJob);

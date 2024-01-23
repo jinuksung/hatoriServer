@@ -5,6 +5,7 @@ import cheerio from "cheerio";
 import { convertUploadedTimeEomisae } from "../utils/utils";
 import { supabase } from "../modules/modules";
 import { logger } from "../modules/logger";
+import "dotenv/config";
 
 const siteName = "Eomisae";
 
@@ -12,7 +13,7 @@ const eomisaeRequest = async () => {
   const dealData: HotDealDataType[] = [];
   const browser = await puppeteer.launch({
     headless: "new",
-    executablePath: "/usr/bin/chromium",
+    executablePath: process.env.ENV === "dev" ? undefined : "/usr/bin/chromium",
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
   });
 
