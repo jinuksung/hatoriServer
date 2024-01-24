@@ -22,7 +22,7 @@ const ruliwebRequest = async () => {
   const page = await browser.newPage();
 
   for (let i = 1; i <= 5; i++) {
-    logger.info(`loop${i} start`);
+    logger.info(`${siteName} loop${i} start`);
     await page
       .goto(
         `https://bbs.ruliweb.com/market/board/1020?page=${i}&view=default`,
@@ -34,7 +34,7 @@ const ruliwebRequest = async () => {
 
     const content = await page.content();
     const $ = cheerio.load(content, { ignoreWhitespace: false });
-    logger.info(content);
+    // logger.info(content);
     $(
       "#board_list > div > div.board_main.theme_default.theme_white > table > tbody"
     )

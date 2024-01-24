@@ -20,6 +20,7 @@ const eomisaeRequest = async () => {
   const page = await browser.newPage();
 
   for (let i = 1; i <= 5; i++) {
+    logger.info(`${siteName} loop${i} start`);
     await page.goto(`https://eomisae.co.kr/index.php?mid=os&page=${i}`, {
       waitUntil: "networkidle2",
       timeout: 0,

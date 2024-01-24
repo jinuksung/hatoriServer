@@ -13,6 +13,7 @@ import { log } from "console";
 const siteName = "ppomppu";
 
 const ppomppuRequest = async () => {
+  logger.info(`${siteName}Request Start`);
   const dealData: HotDealDataType[] = [];
   const browser = await puppeteer.launch({
     headless: "new",
@@ -23,6 +24,7 @@ const ppomppuRequest = async () => {
   const page = await browser.newPage();
 
   for (let i = 1; i <= 5; i++) {
+    logger.info(`${siteName} loop${i} start`);
     await page
       .goto(
         `https://www.ppomppu.co.kr/zboard/zboard.php?id=ppomppu&page=${i}&divpage=85`,
