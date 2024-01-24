@@ -11,7 +11,7 @@ import { logger } from "../modules/logger";
 const siteName = "ruliweb";
 
 const ruliwebRequest = async () => {
-  logger.info("ruliwebRequest Start");
+  logger.info(`${siteName}Request Start`);
   const dealData: HotDealDataType[] = [];
   const browser = await puppeteer.launch({
     headless: "new",

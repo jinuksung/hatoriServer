@@ -10,6 +10,7 @@ import "dotenv/config";
 const siteName = "Eomisae";
 
 const eomisaeRequest = async () => {
+  logger.info(`${siteName}Request Start`);
   const dealData: HotDealDataType[] = [];
   const browser = await puppeteer.launch({
     headless: "new",
