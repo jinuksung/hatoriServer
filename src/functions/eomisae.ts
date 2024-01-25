@@ -7,7 +7,7 @@ import { supabase } from "../modules/modules";
 import { logger } from "../modules/logger";
 import "dotenv/config";
 
-const siteName = "Eomisae";
+const siteName = "eomisae";
 
 const eomisaeRequest = async () => {
   logger.info(`${siteName}Request Start`);

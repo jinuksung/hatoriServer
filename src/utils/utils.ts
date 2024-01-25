@@ -57,7 +57,7 @@ export const convertUploadedTimeRuliweb = (time: string) => {
       Number(timeArray[1])
     );
 
-    return new Date(uploadedDate.getTime() - KR_TIME_DIFF);
+    return new Date(uploadedDate.getTime());
   } else {
     const timeArray = time.split(".");
     const uploadedDate = new Date(
@@ -65,7 +65,7 @@ export const convertUploadedTimeRuliweb = (time: string) => {
       Number(timeArray[1]) - 1,
       Number(timeArray[2])
     );
-    return new Date(uploadedDate.getTime() - KR_TIME_DIFF);
+    return new Date(uploadedDate.getTime());
   }
 };
 
@@ -88,7 +88,7 @@ export const convertUploadedTimePpomppu = (time: string) => {
 
   // console.log("uploadedDate :", uploadedDate);
 
-  return new Date(uploadedDate.getTime() - KR_TIME_DIFF);
+  return new Date(uploadedDate.getTime());
 };
 
 export const convertCategoryPpomppu = (categoryString: string) => {
